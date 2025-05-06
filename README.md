@@ -6,7 +6,7 @@
 <h1 align="center">Hey there! 👋 I'm Rahul — AI Agent Engineer & Automation Architect</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Crafting+autonomous+AI+agents+🤖;Building+scalable+Java+Spring+Boot+APIs+🚀;Automating+everything+with+n8n+🔁;Dockerizing+all+the+things+🐳;Let’s+build+something+legendary+🔥" alt="Typing animation" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=AI+Agent+Engineer+🤖;n8n+Workflow+Wizard+🔁;Java+Spring+Boot+API+Dev+🚀;Dockerized+Dreamer+🐳;Open+to+Collaboration+🤝" alt="Typing SVG" />
 </p>
 
 ---
@@ -63,16 +63,6 @@
 - 📦 Fully containerized CI/CD DevOps
 - 🔄 API-based business workflow automation
 - 📚 AI-enhanced scraping, parsing, reasoning
-
----
-
-### 🎨 Custom Touches
-
-<p align="center">
-  <img src="https://media.giphy.com/media/Z9chRY3FfRBqk/giphy.gif" width="120" />
-  <img src="https://media.giphy.com/media/3ohc1dvu7Uil2W2i5y/giphy.gif" width="120" />
-  <img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" width="120" />
-</p>
 
 ---
 
