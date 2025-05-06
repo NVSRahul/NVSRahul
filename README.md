@@ -22,10 +22,10 @@
 
 ---
 
-### 🚀 My Tech Stack (Live Animated Icons)
+### 🚀 My Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=java,spring,docker,python,git,linux,n8n,vscode,bash,github&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=java,spring,docker,python,git,linux,IntelliJ,vscode,bash,github&theme=dark" />
 </p>
 
 ---
