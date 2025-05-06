@@ -3,7 +3,7 @@
   <img src="https://github.com/NVSRahul/NVSRahul/assets/banner.gif" alt="Welcome Banner" width="100%"/>
 </p>
 
-<h1 align="center">Hey there! 👋 I'm Rahul — AI Agent Engineer & Automation Architect</h1>
+<h1 align="center">Hey there! 👋 I'm Rahul </h1>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=AI+Agent+Engineer+🤖;n8n+Workflow+Wizard+🔁;Java+Spring+Boot+API+Dev+🚀;Dockerized+Dreamer+🐳;Open+to+Collaboration+🤝" alt="Typing SVG" />
