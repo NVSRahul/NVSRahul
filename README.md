@@ -11,17 +11,6 @@
 
 ---
 
-### 💡 Who Am I?
-
-> 🔧 I'm a **full-stack automation developer** focused on building intelligent, scalable systems using:
-> - 🧠 **AI Agents** for decision-making workflows
-> - ⚙️ **Java + Spring Boot** for enterprise backend APIs
-> - 🔁 **n8n** for orchestrating async, trigger-driven automation
-> - 🐳 **Docker** for containerizing everything efficiently
-> - ☁️ Exploring **LangGraph**, **LangChain**, and **microservice design patterns**
-
----
-
 ### 🚀 My Tech Stack
 
 <p align="center">
