@@ -47,25 +47,6 @@
 
 ---
 
-### 🧠 Projects In Progress
-
-| Project                          | Stack                                 | Description                                           |
-|----------------------------------|----------------------------------------|-------------------------------------------------------|
-| AI Web Scraper                  | `Java`, `Spring Boot`, `AI Agents`     | Self-navigating scraper that adapts to page changes   |
-| n8n Agent Launcher              | `n8n`, `Langchain`, `Webhook APIs`     | Launch agents on any webhook trigger in real time     |
-| Dockerized Dev Environments    | `Docker`, `Python`, `Bash`             | Portable setups for local-first devops                |
-
----
-
-### 🎯 Focus Areas
-
-- 🤖 Autonomous multi-agent coordination (LangGraph, CrewAI, ReAct)
-- 📦 Fully containerized CI/CD DevOps
-- 🔄 API-based business workflow automation
-- 📚 AI-enhanced scraping, parsing, reasoning
-
----
-
 ### 📬 Connect With Me
 
 <p align="center">
