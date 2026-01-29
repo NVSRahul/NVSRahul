@@ -25,6 +25,7 @@
   <img src="https://img.shields.io/badge/Docker-000000?style=flat-square&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Bash-000000?style=flat-square&logo=gnu-bash&logoColor=white" />
   <img src="https://img.shields.io/badge/Vim-000000?style=flat-square&logo=vim&logoColor=white" />
+  <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" />
 </p>
 
 
