@@ -1,0 +1,18 @@
+<svg width="600" height="36" viewBox="0 0 600 36" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 22px;
+      fill: #ff3333;
+    }
+    .cursor {
+      animation: blink 1s steps(1) infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+
+  <text x="0" y="25">root@NVSRahul:~#</text>
+  <text x="215" y="25" class="cursor">█</text>
+</svg>
