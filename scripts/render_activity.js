@@ -3,6 +3,9 @@ import fs from "fs";
 const token = process.env.GITHUB_TOKEN;
 const user = "NVSRahul";
 
+const FONT =
+  '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
+
 const query = `
 query {
   user(login: "${user}") {
@@ -64,7 +67,8 @@ if (current === 0) current = temp;
 
 const repos = data.repositories.totalCount;
 const stars = data.repositories.nodes.reduce(
-  (sum, r) => sum + r.stargazerCount, 0
+  (sum, r) => sum + r.stargazerCount,
+  0
 );
 
 /* ---------- languages ---------- */
@@ -89,32 +93,32 @@ const svg = `
   <rect width="100%" height="100%" fill="#0d1117"/>
 
   <text x="24" y="28" font-size="16" fill="#58a6ff"
-    font-family="JetBrains Mono">Overview</text>
+    font-family="${FONT}">Overview</text>
 
   <text x="24" y="64" font-size="12" fill="#8b949e"
-    font-family="JetBrains Mono">Commits</text>
+    font-family="${FONT}">Commits</text>
   <text x="24" y="94" font-size="22" fill="#ffffff"
-    font-family="JetBrains Mono">${calendar.totalContributions}</text>
+    font-family="${FONT}">${calendar.totalContributions}</text>
 
   <text x="140" y="64" font-size="12" fill="#8b949e"
-    font-family="JetBrains Mono">Repositories</text>
+    font-family="${FONT}">Repositories</text>
   <text x="140" y="94" font-size="22" fill="#ffffff"
-    font-family="JetBrains Mono">${repos}</text>
+    font-family="${FONT}">${repos}</text>
 
   <text x="300" y="64" font-size="12" fill="#8b949e"
-    font-family="JetBrains Mono">Stars</text>
+    font-family="${FONT}">Stars</text>
   <text x="300" y="94" font-size="22" fill="#ffffff"
-    font-family="JetBrains Mono">${stars}</text>
+    font-family="${FONT}">${stars}</text>
 
   <text x="420" y="64" font-size="12" fill="#8b949e"
-    font-family="JetBrains Mono">Streak</text>
+    font-family="${FONT}">Streak</text>
   <text x="420" y="94" font-size="22" fill="#ffffff"
-    font-family="JetBrains Mono">${current} / ${best} days</text>
+    font-family="${FONT}">${current} / ${best} days</text>
 
   <text x="24" y="132" font-size="12" fill="#8b949e"
-    font-family="JetBrains Mono">Languages</text>
+    font-family="${FONT}">Languages</text>
   <text x="110" y="132" font-size="12" fill="#c9d1d9"
-    font-family="JetBrains Mono">${topLanguages}</text>
+    font-family="${FONT}">${topLanguages}</text>
 </svg>
 `;
 
