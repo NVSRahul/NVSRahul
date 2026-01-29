@@ -6,8 +6,17 @@ const user = "NVSRahul";
 const query = `
 query {
   user(login: "${user}") {
-    repositories(privacy: PUBLIC, isFork: false) {
+    repositories(privacy: PUBLIC, isFork: false, first: 100) {
       totalCount
+      nodes {
+        stargazerCount
+        languages(first: 5) {
+          edges {
+            size
+            node { name }
+          }
+        }
+      }
     }
     contributionsCollection {
       contributionCalendar {
@@ -15,7 +24,6 @@ query {
         weeks {
           contributionDays {
             contributionCount
-            date
           }
         }
       }
@@ -33,15 +41,14 @@ const res = await fetch("https://api.github.com/graphql", {
   body: JSON.stringify({ query })
 });
 
-const json = await res.json();
+const data = (await res.json()).data.user;
 
-const calendar =
-  json.data.user.contributionsCollection.contributionCalendar;
+/* ---------- commits + streaks ---------- */
 
+const calendar = data.contributionsCollection.contributionCalendar;
 const days = calendar.weeks.flatMap(w => w.contributionDays);
 
 let current = 0, best = 0, temp = 0;
-
 for (let i = days.length - 1; i >= 0; i--) {
   if (days[i].contributionCount > 0) {
     temp++;
@@ -53,76 +60,61 @@ for (let i = days.length - 1; i >= 0; i--) {
 }
 if (current === 0) current = temp;
 
-const totalContributions = calendar.totalContributions;
-const totalRepos = json.data.user.repositories.totalCount;
+/* ---------- repos + stars ---------- */
 
-// ring math
-const radius = 42;
-const circumference = 2 * Math.PI * radius;
-const progress = Math.min(current / 30, 1);
-const dash = circumference * progress;
+const repos = data.repositories.totalCount;
+const stars = data.repositories.nodes.reduce(
+  (sum, r) => sum + r.stargazerCount, 0
+);
+
+/* ---------- languages ---------- */
+
+const langMap = {};
+for (const repo of data.repositories.nodes) {
+  for (const l of repo.languages.edges) {
+    langMap[l.node.name] = (langMap[l.node.name] || 0) + l.size;
+  }
+}
+
+const topLanguages = Object.entries(langMap)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 5)
+  .map(([name]) => name)
+  .join(" · ");
+
+/* ---------- SVG ---------- */
 
 const svg = `
-<svg width="720" height="160" xmlns="http://www.w3.org/2000/svg">
-<style>
-  text {
-    font-family: JetBrains Mono, monospace;
-    fill: #c9d1d9;
-  }
-  .title {
-    font-size: 16px;
-    fill: #58a6ff;
-  }
-  .label {
-    font-size: 12px;
-    opacity: .7;
-  }
-  .value {
-    font-size: 22px;
-    fill: #ffffff;
-  }
-  .ring-bg {
-    fill: none;
-    stroke: #21262d;
-    stroke-width: 8;
-  }
-  .ring {
-    fill: none;
-    stroke: #58a6ff;
-    stroke-width: 8;
-    stroke-linecap: round;
-    stroke-dasharray: ${dash} ${circumference};
-    animation: draw 1.6s ease-out forwards;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-  }
-  @keyframes draw {
-    from {
-      stroke-dasharray: 0 ${circumference};
-    }
-    to {
-      stroke-dasharray: ${dash} ${circumference};
-    }
-  }
-</style>
+<svg width="760" height="160" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0d1117"/>
 
-<text x="24" y="26" class="title">Activity</text>
+  <text x="24" y="28" font-size="16" fill="#58a6ff"
+    font-family="JetBrains Mono">Overview</text>
 
-<text x="24" y="64" class="label">Total contributions</text>
-<text x="24" y="92" class="value">${totalContributions}</text>
+  <text x="24" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Commits</text>
+  <text x="24" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">${calendar.totalContributions}</text>
 
-<text x="200" y="64" class="label">Repositories</text>
-<text x="200" y="92" class="value">${totalRepos}</text>
+  <text x="140" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Repositories</text>
+  <text x="140" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">${repos}</text>
 
-<text x="360" y="64" class="label">Current streak</text>
-<text x="360" y="92" class="value">${current} days</text>
+  <text x="300" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Stars</text>
+  <text x="300" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">${stars}</text>
 
-<text x="520" y="64" class="label">Best streak</text>
-<text x="520" y="92" class="value">${best} days</text>
+  <text x="420" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Streak</text>
+  <text x="420" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">${current} / ${best} days</text>
 
-<circle cx="640" cy="88" r="${radius}" class="ring-bg"/>
-<circle cx="640" cy="88" r="${radius}" class="ring"/>
-
+  <text x="24" y="132" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Languages</text>
+  <text x="110" y="132" font-size="12" fill="#c9d1d9"
+    font-family="JetBrains Mono">${topLanguages}</text>
 </svg>
 `;
 
