@@ -1,62 +1,32 @@
 
-<svg width="720" height="160" xmlns="http://www.w3.org/2000/svg">
-<style>
-  text {
-    font-family: JetBrains Mono, monospace;
-    fill: #c9d1d9;
-  }
-  .title {
-    font-size: 16px;
-    fill: #58a6ff;
-  }
-  .label {
-    font-size: 12px;
-    opacity: .7;
-  }
-  .value {
-    font-size: 22px;
-    fill: #ffffff;
-  }
-  .ring-bg {
-    fill: none;
-    stroke: #21262d;
-    stroke-width: 8;
-  }
-  .ring {
-    fill: none;
-    stroke: #58a6ff;
-    stroke-width: 8;
-    stroke-linecap: round;
-    stroke-dasharray: 8.79645943005142 263.89378290154264;
-    animation: draw 1.6s ease-out forwards;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-  }
-  @keyframes draw {
-    from {
-      stroke-dasharray: 0 263.89378290154264;
-    }
-    to {
-      stroke-dasharray: 8.79645943005142 263.89378290154264;
-    }
-  }
-</style>
+<svg width="760" height="160" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0d1117"/>
 
-<text x="24" y="26" class="title">Activity</text>
+  <text x="24" y="28" font-size="16" fill="#58a6ff"
+    font-family="JetBrains Mono">Overview</text>
 
-<text x="24" y="64" class="label">Total contributions</text>
-<text x="24" y="92" class="value">83</text>
+  <text x="24" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Commits</text>
+  <text x="24" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">84</text>
 
-<text x="200" y="64" class="label">Repositories</text>
-<text x="200" y="92" class="value">8</text>
+  <text x="140" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Repositories</text>
+  <text x="140" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">8</text>
 
-<text x="360" y="64" class="label">Current streak</text>
-<text x="360" y="92" class="value">1 days</text>
+  <text x="300" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Stars</text>
+  <text x="300" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">31</text>
 
-<text x="520" y="64" class="label">Best streak</text>
-<text x="520" y="92" class="value">3 days</text>
+  <text x="420" y="64" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Streak</text>
+  <text x="420" y="94" font-size="22" fill="#ffffff"
+    font-family="JetBrains Mono">1 / 3 days</text>
 
-<circle cx="640" cy="88" r="42" class="ring-bg"/>
-<circle cx="640" cy="88" r="42" class="ring"/>
-
+  <text x="24" y="132" font-size="12" fill="#8b949e"
+    font-family="JetBrains Mono">Languages</text>
+  <text x="110" y="132" font-size="12" fill="#c9d1d9"
+    font-family="JetBrains Mono">Rust · Java · Python · JavaScript · HTML</text>
 </svg>
