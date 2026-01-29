@@ -1,0 +1,23 @@
+name: Render SVG
+
+on:
+  workflow_run:
+    workflows: ["Metrics Data"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/render_activity.js
+      - run: |
+          git add assets/activity.svg
+          git commit -m "update activity svg" || true
+          git push
