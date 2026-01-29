@@ -1,7 +1,7 @@
 name: Metrics
 on:
   schedule:
-    - cron: "0 0 * * *"   
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: NVSRahul
+
+          repositories_batch: 50
+          repositories_forks: no
+          repositories_affiliations: owner
+
           template: classic
           base: header, repositories, activity
           config_timezone: Asia/Kolkata
