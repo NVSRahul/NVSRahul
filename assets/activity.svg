@@ -8,17 +8,17 @@
   <text x="24" y="64" font-size="12" fill="#8b949e"
     font-family="JetBrains Mono">Commits</text>
   <text x="24" y="94" font-size="22" fill="#ffffff"
-    font-family="JetBrains Mono">86</text>
+    font-family="JetBrains Mono">96</text>
 
   <text x="140" y="64" font-size="12" fill="#8b949e"
     font-family="JetBrains Mono">Repositories</text>
   <text x="140" y="94" font-size="22" fill="#ffffff"
-    font-family="JetBrains Mono">8</text>
+    font-family="JetBrains Mono">9</text>
 
   <text x="300" y="64" font-size="12" fill="#8b949e"
     font-family="JetBrains Mono">Stars</text>
   <text x="300" y="94" font-size="22" fill="#ffffff"
-    font-family="JetBrains Mono">35</text>
+    font-family="JetBrains Mono">37</text>
 
   <text x="420" y="64" font-size="12" fill="#8b949e"
     font-family="JetBrains Mono">Streak</text>
@@ -28,5 +28,5 @@
   <text x="24" y="132" font-size="12" fill="#8b949e"
     font-family="JetBrains Mono">Languages</text>
   <text x="110" y="132" font-size="12" fill="#c9d1d9"
-    font-family="JetBrains Mono">Rust · Java · Python · JavaScript · HTML</text>
+    font-family="JetBrains Mono">JavaScript · Rust · TypeScript · Java · Python</text>
 </svg>
